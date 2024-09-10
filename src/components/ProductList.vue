@@ -110,6 +110,10 @@ export default defineComponent({
           value: 2,
           label: "正在进行",
         },
+        {
+          value: 3,
+          label: "已结束",
+        },
       ],
       imageUrl: computed(
         () => (primaryPic, size) => API.image_url + size + "/" + (primaryPic.startsWith("jfs") ? primaryPic : "jfs/" + primaryPic)
@@ -125,6 +129,7 @@ export default defineComponent({
           });
       },
       search() {
+        console.log("search")
         dataMap.fetchProduct();
       },
       fetchProduct(pageNo = 1) {

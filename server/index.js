@@ -87,7 +87,7 @@ async function updateBid(params) {
 	const { auctionDetailCurl, price, bidder, markup, lastBidCountdownTime, biddingMethod, minPrice, offerPriceBack } = params;
 
 	if (!isLogin) {
-		handleSendNotice("请先点击开始抢购，并登录");
+		handleSendNotice("请先点击开始抢购，并登录",true);
 		return;
 	}
 

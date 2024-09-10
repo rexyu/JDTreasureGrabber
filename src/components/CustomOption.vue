@@ -86,6 +86,20 @@
         </el-row>
       </el-col>
     </el-form-item>
+    <el-form-item label="钉钉通知">
+      <el-col :span="3">
+        <el-row justify="start">
+          <el-switch v-model="form.enableDing" inline-prompt active-text="启用" inactive-text="关闭"></el-switch>
+        </el-row>
+      </el-col>
+      <el-col :span="21">
+        <el-row justify="space-between">
+          <el-col :span="18">
+            <el-input v-model="form.dingBotWebhook" placeholder="钉钉群机器人 Webhook 中的Token" />
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-form-item>
     <el-form-item label="出价接口 Http代理">
       <el-col :span="3">
         <el-row justify="start">
@@ -201,6 +215,8 @@ export default defineComponent({
         useToggle(dataMap.isDark);
       },
       form: {
+        enableDing: false,
+        dingBotWebhook: null,
         enableTel: false,
         telBotToken: null,
         telChatId: null,

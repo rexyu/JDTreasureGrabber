@@ -218,7 +218,7 @@ function fetchProduct(params = {}) {
 	return new Promise((resolve, reject) => {
 
 		let path, params;
-		if (name) {
+		if (!name) {
 			path = `${API.api_jd_path}?functionId=pp.dbd.biz.search.query&t=${new Date().getTime()}&appid=paipai_h5`;
 			params = { pageNo: pageNo, pageSize: 20, key: name, status: status, sort: "endTime_asc", specialType: 1, mpSource: 1, sourceTag: 2 };
 		} else {
